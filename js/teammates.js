@@ -37,10 +37,15 @@ const members = [
   },
 ];
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   console.log("Checking reload");
   createCards();
 });
+
+// $(document).ready(function () {
+//   console.log("Checking reload");
+//   createCards();
+// });
 
 // TODO
 // 나중에 firebase에서 데이터 가져와서
@@ -64,7 +69,8 @@ function createCards() {
         </div>
       </div>`;
 
-    $("#team-cards").append(cardDiv);
+    // const teamCards = document.getElementById("team-cards");
+    document.getElementById("team-cards").appendChild(cardDiv);
 
     cardDiv.addEventListener("click", (event) => {
       console.log(cardDiv.dataset.index + "의 상세보기 페이지");
