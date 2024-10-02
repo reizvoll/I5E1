@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팀원카드</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="modalFirst">
+      <div class="modal_body">
+        <div class="icon">
+            <i id="menuBtn1" class="fa-solid fa-ellipsis-vertical" style="margin-right: 20px;"></i>
+            <div id="menu1" class="menu">
+              <button id="editBtn" class="btnOpenModal_2">수정</button>            
+              <button id="deleteBtn">삭제</button>
+          </div>
+            <i id="close" class="fa-solid fa-x"></i>
+        </div>
+        <!-- 이미지, 블로그 url은 기본이미지와 네이버 링크 걸어둠 -->
+        <img
+          src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo-available_87543-11093.jpg?size=626&ext=jpg"
+          alt=""/>
+          <button type="button" class="btn" onclick="location.href='https://www.naver.com/' ">블로그 가기 ></button>
+        <div class="info">
+          <div class="name">원윤선</div>
+          <span>화이팅@!</span>
+          <div><br>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:
+            Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:
+            Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-open-modalFirst">Modal열기</button>
+    <script src="script.js"></script>
+
+    
+
+
+  </body>
+</html>
