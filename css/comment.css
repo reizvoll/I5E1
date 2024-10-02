@@ -9,6 +9,10 @@ p {
     padding: 0;
 }
 
+.comment {
+    padding: 70px;
+}
+
 .guestbook {
     max-width: 1200px;
     margin: 0 auto;
