@@ -43,3 +43,100 @@ body {
     border-top: 1px solid #e0e0e0;
     height: 259px;
 }
+
+
+
+
+
+
+.navbar {
+    background-color: white;
+    height: 104px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.nbar-logo {
+    width: 74px;
+    height: 40px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-link {
+    margin-left: 20px;
+}
+
+#nav-link-ondo {
+    margin-left: 30px;
+}
+
+.footer {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.footer-brand1 {
+    display: flex;
+    align-items: center;
+}
+
+#footer-logo1 {
+    width: 50.37px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.footer-brand2 {
+    display: inline-block;
+}
+
+#footer-logo2 {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-name {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+
+.footer-name a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#All-rights-reserved {
+    color: #757575;
+    white-space: nowrap;
+    width: 240px;
+    height: 22px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 100px;
+}
+
+.container-fluid.navbar-custom {
+    flex-wrap: nowrap;
+}
+
+.weather-icon {
+    width: 24px;
+    height: 24px;
+}
