@@ -24,7 +24,7 @@
                 let temp = data['temp'];
                 $('#ondo').text(temp);
                 let icon = data['icon'];
-                $('#ondo-icon').html(`<img src="${icon}" alt="Weather Icon" style="width: 24px; height: 24px;">`);
+                $('#ondo-icon').html(`<img class="weather-icon" src="${icon}" alt="Weather Icon">`);
             })
         })
     </script>
@@ -33,30 +33,29 @@
 <body>
 
     <!-- 헤더 -->
-    <nav class="navbar navbar-expand-lg fixed-top"
-        style="background-color: white; height: 104px; max-width: 1200px; width: 100%;">
-        <div class="container-fluid navbar-custom" style="flex-wrap: nowrap;">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid navbar-custom">
             <!-- 로고 -->
             <a class="navbar-brand" href="#">
-                <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FmV4G5R7U24tKV4-et2LLb.png&w=1920&q=75"
-                    alt="Logo" style="width: 74px; height: 40px;">
+                <img class="nbar-logo"
+                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FmV4G5R7U24tKV4-et2LLb.png&w=1920&q=75"
+                    alt="Logo">
             </a>
 
             <!-- 팀 소개 / 팀원 소개 / 방명록 / 온도 -->
             <div class="navbar-center">
-                <ul class="navbar-nav" style="display: flex; flex-direction: row;">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#nbar1">팀 소개</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="margin-left: 20px;" href="#nbar2">팀원 소개</a>
+                        <a class="nav-link" href="#nbar2">팀원 소개</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="margin-left: 20px;" href="#nbar3">방명록</a>
+                        <a class="nav-link" href="#nbar3">방명록</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="margin-left: 30px;"><span id="ondo-icon"></span><span
-                                id="ondo"></span>℃</a>
+                        <a class="nav-link" id="nav-link-ondo"><span id="ondo-icon"></span><span id="ondo"></span>℃</a>
                     </li>
                 </ul>
             </div>
@@ -85,8 +84,13 @@
     <!-- 팀원소개 섹션-->
     <div class="teammates" id="teammates">
         <div class="team-intro">
-            <h3 class="tit1" id="nbar2">팀원 소개</h3>
+<<<<<<< HEAD
+            <h3 class="bold" id="nbar2">팀원 소개</h3>
+            <p>Subheading</p>
+=======
+            <h4 class="tit2" id="nbar2">팀원 소개</h4>
             <h6 class="sub2"> SubHeading </h6>
+>>>>>>> af77be42963f61a7912b120ec88efbfb7f1c92e4
         </div>
 
         <!-- 팀원 카드 모음  potato-row -->
@@ -105,7 +109,7 @@
         </form>
 
 
-        <!-- 댓글 입력 폼 종료 -->
+    <!-- 댓글 입력 폼 종료 -->
 
         <!-- 말풍선 -->
         <div class="guestbook">
@@ -143,44 +147,32 @@
     <script src="https://kit.fontawesome.com/493cc16663.js" crossorigin="anonymous"></script>
 
 
+    <!-- 푸터 -->
     <footer class="footer">
-        <div
-            style="width: 100%; text-align: left; display: flex; flex-direction: column; align-items: flex-start; margin-left: 100px;">
-            <div style="display: flex; align-items: center;">
-                <a class="footer-brand" style="display: flex; align-items: center;">
-                    <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FTCoRbHZZCcGWE3i8VYwoV.png&w=1920&q=75"
-                        style="width: 50.37px; height: 20px; margin-right: 10px;">
-                </a>
-                <a href="https://github.com/reizvoll/I5E1" target="_blank" style="display: inline-block;">
-                    <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FIAOCOTfhJPA81TROroDg1.png&w=1920&q=75"
-                        style="width: 20px; height: 20px;">
-                </a>
-            </div>
-
-            <p class="footer-name"
-                style="margin-top: 20px; display: flex; flex-wrap: nowrap; justify-content: flex-start;">
-                <a href="https://reiz-voll.tistory.com/" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>임지영</span></a>
-                <a href="https://velog.io/@sun4/posts" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>원윤선</span></a>
-                <a href="https://notion0896.tistory.com/" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>김진실</span></a>
-                <a href="https://dev-gana.tistory.com/" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>박가나</span></a>
-                <a href="https://velog.io/@pk97h/posts" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>박하은</span></a>
-                <a href="https://velog.io/@chay140/posts" target="_blank"
-                    style="text-decoration: none; color: inherit;"><span>박채현</span></a>
-            </p>
-
-
-            <p
-                style="color: #757575; white-space: nowrap; width: 240px; height: 22px; display: inline-block; box-sizing: border-box; margin-top: 20px;">
-                © 2024 I5E1. All rights reserved.
-            </p>
-
+        <div class="footer-logo">
+            <a class="footer-brand1">
+                <img id="footer-logo1"
+                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FTCoRbHZZCcGWE3i8VYwoV.png&w=1920&q=75">
+            </a>
+            <a class="footer-brand2" href="https://github.com/reizvoll/I5E1" target="_blank">
+                <img id="footer-logo2"
+                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FIAOCOTfhJPA81TROroDg1.png&w=1920&q=75">
+            </a>
         </div>
+
+        <p class="footer-name">
+            <a href="https://reiz-voll.tistory.com/" target="_blank"><span>임지영</span></a>
+            <a href="https://velog.io/@sun4/posts" target="_blank"><span>원윤선</span></a>
+            <a href="https://notion0896.tistory.com/" target="_blank"><span>김진실</span></a>
+            <a href="https://dev-gana.tistory.com/" target="_blank"><span>박가나</span></a>
+            <a href="https://velog.io/@pk97h/posts" target="_blank"><span>박하은</span></a>
+            <a href="https://velog.io/@chay140/posts" target="_blank"><span>박채현</span></a>
+        </p>
+
+
+        <p id="All-rights-reserved">© 2024 I5E1. All rights reserved.</p>
     </footer>
+    
 </body>
 
 </html>
