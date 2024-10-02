@@ -38,7 +38,7 @@ const members = [
 ];
 
 $(document).ready(function () {
-  // console.log("Checking reload");
+  console.log("Checking reload");
   createCards();
 });
 
