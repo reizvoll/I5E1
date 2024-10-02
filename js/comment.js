@@ -31,19 +31,21 @@ const getElementVal = (id) => {
     return document.getElementById(id).value; // 해당 ID의 값 반환
 };
 
-commentDb.on('child_added', (data) => {
-    const commentData = data.val();
+document.addEventListener('DOMContentLoaded', function () {
+    commentDb.on('child_added', (data) => {
+        const commentData = data.val();
 
-    document.getElementById('guestbook').innerHTML += `
-        <div class="guestbook-container">
-            <img class="guestbook-profile" src="./images/comment-profile.png" />
-            <div>
-                <div class="guestbook-user">
-                    <p class="guestbook-name">방문자</p>
-                    <p class="guestbook-date">${commentData.createAt}</p>
+        document.getElementById('guestbook').innerHTML += `
+            <div class="guestbook-container">
+                <img class="guestbook-profile" src="./images/comment-profile.png" />
+                <div>
+                    <div class="guestbook-user">
+                        <p class="guestbook-name">방문자</p>
+                        <p class="guestbook-date">${commentData.createAt}</p>
+                    </div>
+                    <p class="guestbook-comment">${commentData.comment}</p>
                 </div>
-                <p class="guestbook-comment">${commentData.comment}</p>
             </div>
-        </div>
-    `;
+        `;
+    });
 });
