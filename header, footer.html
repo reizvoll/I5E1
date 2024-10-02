@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>nbar</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+            fetch(url).then(res => res.json()).then(data => {
+                let temp = data['temp'];
+                $('#ondo').text(temp);
+                let icon = data['icon'];
+                $('#ondo-icon').html(`<img src="${icon}" alt="Weather Icon" style="width: 24px; height: 24px;">`);
+            })
+        })
+    </script>
+
+    <style>
+        .navbar-custom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        .navbar-center {
+            display: flex;
+            margin-left: auto;
+            flex-wrap: nowrap;
+        }
+    </style>
+
+    <style>
+        .footer-name span {
+            margin-right: 80px;
+            white-space: nowrap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Pretendard-Regular', sans-serif;
+            padding-top: 100px;
+            width: 1200px;
+        }
+
+        .nav-link {
+            color: #1E1E1E;
+            white-space: nowrap;
+        }
+
+        .footer {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 50px;
+            border-top: 1px solid #e0e0e0;
+            height: 259px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <nav class="navbar navbar-expand-lg fixed-top"
+        style="background-color: white; height: 104px; max-width: 1200px; width: 100%;">
+        <div class="container-fluid navbar-custom" style="flex-wrap: nowrap;">
+            <!-- 로고 -->
+            <a class="navbar-brand" href="#">
+                <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FmV4G5R7U24tKV4-et2LLb.png&w=1920&q=75"
+                    alt="Logo" style="width: 74px; height: 40px;">
+            </a>
+
+            <!-- 팀 소개 / 팀원 소개 / 방명록 / 온도 -->
+            <div class="navbar-center">
+                <ul class="navbar-nav" style="display: flex; flex-direction: row;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#nbar1">팀 소개</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-left: 20px;" href="#nbar2">팀원 소개</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-left: 20px;" href="#nbar3">방명록</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-left: 30px;"><span id="ondo-icon"></span><span
+                                id="ondo"></span>℃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div
+            style="width: 100%; text-align: left; display: flex; flex-direction: column; align-items: flex-start; margin-left: 100px;">
+            <div style="display: flex; align-items: center;">
+                <a class="footer-brand" style="display: flex; align-items: center;">
+                    <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FTCoRbHZZCcGWE3i8VYwoV.png&w=1920&q=75"
+                        style="width: 50.37px; height: 20px; margin-right: 10px;">
+                </a>
+                <a href="https://github.com/reizvoll/I5E1" target="_blank" style="display: inline-block;">
+                    <img src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FIAOCOTfhJPA81TROroDg1.png&w=1920&q=75"
+                        style="width: 20px; height: 20px;">
+                </a>
+            </div>
+
+            <p class="footer-name"
+                style="margin-top: 20px; display: flex; flex-wrap: nowrap; justify-content: flex-start;">
+                <a href="https://reiz-voll.tistory.com/" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>임지영</span></a>
+                <a href="https://velog.io/@sun4/posts" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>원윤선</span></a>
+                <a href="https://notion0896.tistory.com/" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>김진실</span></a>
+                <a href="https://dev-gana.tistory.com/" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>박가나</span></a>
+                <a href="https://velog.io/@pk97h/posts" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>박하은</span></a>
+                <a href="https://velog.io/@chay140/posts" target="_blank"
+                    style="text-decoration: none; color: inherit;"><span>박채현</span></a>
+            </p>
+
+
+            <p
+                style="color: #757575; white-space: nowrap; width: 240px; height: 22px; display: inline-block; box-sizing: border-box;">
+                © 2024 I5E1. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
