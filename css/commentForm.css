@@ -1,0 +1,39 @@
+.commentWrap{
+    display: flex;
+    align-items: center;
+    align-items: stretch;
+    gap: 15px;
+    width: 70%;
+    max-width: 1072px;
+    margin: 0 auto;
+    height: fit-content;
+
+}
+.commentBox{
+    flex-grow: 1;
+    height: 78px;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: #D9D9D9 1px solid;
+}
+.commentBox::placeholder {
+    color: #D9D9D9;
+}
+
+.commentSubmtBtn {
+    height: auto;
+    min-width: 90px;
+    border-radius: 10px;
+    border-width: 0;
+    cursor: pointer;
+    background-color: #2C2C2C;
+    color: #fff;
+}
+
+.commentBox:focus, input:focus{
+    outline: none;
+}
+
+
