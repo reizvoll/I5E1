@@ -125,6 +125,7 @@ body {
     display: inline-block;
     box-sizing: border-box;
     margin-left: 100px;
+    margin-top: 20px;
 }
 
 .container-fluid.navbar-custom {
