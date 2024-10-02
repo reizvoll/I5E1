@@ -35,7 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     commentDb.on('child_added', (data) => {
         const commentData = data.val();
 
-        document.getElementById('guestbook').innerHTML += `
+        // 이전 내역 임시 저장
+        let prev_comment = document.getElementById('guestbook').innerHTML;
+
+        // 새로 입력한 방명록 붙이기
+        document.getElementById('guestbook').innerHTML = `
             <div class="guestbook-container">
                 <img class="guestbook-profile" src="./images/comment-profile.png" />
                 <div>
@@ -47,5 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `;
+
+        // 신규 방명록 아래에 이전 내역 붙이기
+        document.getElementById('guestbook').innerHTML += prev_comment;
     });
 });
