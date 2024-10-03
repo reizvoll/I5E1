@@ -1,110 +1,104 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-
-/* * {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: #1e1e1e;
-  font-weight: 400;
-} */
-
-/* body {
-
-} */
 
 .bold {
+
   font-weight: 700;
+
 }
 
 .teammates {
   /* 일단 고정 시킴 */
   width: 1200px;
-  max-width: 100%;
+  min-width: 100%;
   height: 675px;
   padding: 65px;
+
 }
 
 .team-intro {
+
   height: 60px;
+
 }
 
 .team-cards {
-  /* background-color: gray; */
 
   margin: 24px 0px;
   padding-top: 0px;
-
   width: 100%;
   min-height: 342px;
-
-  /* overflow: visible; */
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-
   row-gap: 48px;
+
 }
 
 .mycard {
-  max-width: 30%;
+
+  min-width: 30%;
   height: 150px;
   padding: 20px;
   border-radius: 0.5em;
   margin-top: 0;
-
   transition: 0.5s ease;
-
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .mycard:hover {
+
   transform: scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 50px;
+
 }
 
 .member-des {
+
   width: auto;
   margin-bottom: 0px;
-
   font-size: 24px;
   font-weight: 700;
-  /* background-color: lightsalmon; */
+
 }
 
 .card-content {
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   margin-top: 24px;
-
   min-width: 140px;
   height: 46px;
 
-  /* background-color: lightsalmon; */
 }
 
 .profile-pic {
+
   width: 40px;
   height: 40px;
   border-radius: 50px;
+
 }
 
 .card-body {
+
   padding: 0 0 0 1em;
+
 }
 
 .card-body > * {
+
   color: #b3b3b3;
+
 }
 
 .card-title {
+
   color: #757575;
   margin-bottom: 0px;
+
 }
 
 
@@ -112,6 +106,7 @@
 
 /* 카드 추가 버튼 css */
 #createBtn{
+
   padding: 5px 18px;
   border-radius: 8px;
   border: 0px;
@@ -121,4 +116,5 @@
   font-weight: 500;
   position: relative;
   left: 970px;
+  
 }

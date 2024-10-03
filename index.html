@@ -4,47 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>섹션 1, 2</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title> I5E1 소개페이지 </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main_page.css" />
-    <link rel="stylesheet" href="./css/commentForm.css">
-    <link rel="stylesheet" href="./css/comment.css">
-    <link rel="stylesheet" href="./css/teammates.css">
-    <link rel="stylesheet" href="./css/hfscript.css">
-    <link rel="stylesheet" href="./css/modalStyle.css" />
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            let url = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=7ecb1eb66ae504b90a80a108c2a51a09&units=metric";
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    let temp = data['main']['temp'];
-                    $('#ondo').text(temp);
-                    let icon = data['weather'][0]['icon'];
-                    let iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-                    $('#ondo-icon').html(`<img class="weather-icon" src="${iconUrl}" alt="Weather Icon">`);
-                });
-        });
-    </script>
+    <link rel="stylesheet" href="./css/app.css" />
     
 </head>
 
 <body>
 
-    <!-- 헤더 -->
+    <!-- 섹션 1 : 헤더 -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid navbar-custom">
             <!-- 로고 -->
             <a class="navbar-brand" href="#">
                 <img class="nbar-logo"
-                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FmV4G5R7U24tKV4-et2LLb.png&w=1920&q=75"
+                    src="https://ifh.cc/g/QCJOSd.png"
                     alt="Logo">
             </a>
 
@@ -70,6 +48,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- 섹션 2 : 메인 / 팀 소개 페이지-->
     <div class="main_head">
         <div class="wrap">
             <h1 class="tit1"> I5E1 </h1>
@@ -222,12 +201,12 @@
     <script src="https://kit.fontawesome.com/493cc16663.js" crossorigin="anonymous"></script>
     
 
-    <!-- 푸터 -->
+    <!-- 섹션 1 : 푸터 -->
     <footer class="footer">
         <div class="footer-logo">
             <a class="footer-brand1">
                 <img id="footer-logo1"
-                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FTCoRbHZZCcGWE3i8VYwoV.png&w=1920&q=75">
+                    src="https://ifh.cc/g/TnO97L.png">
             </a>
             <a class="footer-brand2" href="https://github.com/reizvoll/I5E1" target="_blank">
                 <img id="footer-logo2"

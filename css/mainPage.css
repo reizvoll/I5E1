@@ -1,15 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-
-/* 각자 css 폴더에서 css를 아래처럼 추가(import)해서 넣어주세요 */
-
-@import "css1.css";
-@import "banner.css";
-@import "css2.css";
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Pretendard Variable';
   background-color: #fff;
   color: #333;
 }
@@ -36,7 +27,7 @@ body {
 .sub_head {
   padding: 70px;
   width: 100%;
-  max-width: 1200px;
+  min-width: 1200px;
   height: 67.5vh;
   background-image: url('https://ifh.cc/g/F5a4Qa.jpg');
   background-position: center;
