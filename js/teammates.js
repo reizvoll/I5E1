@@ -38,7 +38,6 @@ const members = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Checking reload");
   createCards();
 });
 
@@ -51,42 +50,119 @@ document.addEventListener("DOMContentLoaded", function () {
 // 나중에 firebase에서 데이터 가져와서
 // 카드 생성하는 방향으로 바꾸어야 함
 function createCards() {
-  members.forEach((member, i) => {
+  const memberFormDb = firebase.database().ref("member");
+
+  memberFormDb.on("child_added", (snapshot) => {
+    const memberObj = snapshot.val();
+
+    const memberId = snapshot.key; //데이터의 고유 ID 가져오기
+
+    const name = memberObj.name;
+    const mbti = memberObj.mbti;
+    const blog = memberObj.blog;
+    const intro = memberObj.intro;
+    const description = memberObj.description;
+    const imgUrl = memberObj.imgUrl;
+
     const cardDiv = document.createElement("div");
     cardDiv.className = "card";
     cardDiv.classList.add("mycard");
-    cardDiv.dataset.index = i;
+    // cardDiv.dataset.index = i;
 
     cardDiv.innerHTML = `
-      <p class="member-des">${member.description}</p>
+      <p class="member-des">${intro} DB Test</p>
       <div class="card-content">
         <div class="card-image">
-          <img src="./assets/Coding Potato.jpg" alt="..." class="profile-pic">
+          <img src="${imgUrl}" alt="..." class="profile-pic">
         </div>
         <div class="card-body">
-          <h5 class="card-title bold">${member.name}</h5>
-          <span>${member.mbti}</span>
+          <h5 class="card-title bold">${name}</h5>
+          <span>${mbti}</span>
         </div>
       </div>`;
 
     // const teamCards = document.getElementById("team-cards");
     document.getElementById("team-cards").appendChild(cardDiv);
 
-
-    
     // 모달1 X 버튼 눌렀을 때 모달창 숨기기
     const closebtn = document.querySelector("#close");
 
     closebtn.addEventListener("click", () => {
       modal_1.style.display = "none";
     });
-    
+
     // 팀원 카드에 각각 첫번째 모달창 띄우기
     const modal_1 = document.querySelector(".modalFirst");
 
     cardDiv.addEventListener("click", (event) => {
-      console.log(cardDiv.dataset.index + "의 상세보기 페이지");
       modal_1.style.display = "flex";
+
+      //새로 카드 추가할 때
+      document.getElementById("memberImg").src = imgUrl;
+      document.getElementById("nameBox").innerText = name;
+      document.getElementById("mbtiBox").innerText = mbti;
+      document.getElementById("descriptionBox").innerText = description;
+      document.getElementById("blogBtn").addEventListener("click", function () {
+        location.href = blog; // 클릭 시 URL로 이동
+
+        //수정 창 떴을 때 저장되어 있던 값 불러오기
+        document.getElementById("name").value = name;
+        document.getElementById("mbti").value = mbti;
+        document.getElementById("blog").value = blog;
+        document.getElementById("intro").value = intro;
+        // document.getElementById("imgInput").value=imgUrl;
+        document.getElementById("description").value = description;
+
+        document.getElementById("yes").addEventListener("click", () => {
+          memberFormDb
+            .child(memberId)
+            .remove()
+            .then(() => {
+              console.log("데이터 삭제 완료");
+              memberDiv.remove(); //UI 카드제거
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        });
+      });
     });
   });
+
+  // members.forEach((member, i) => {
+  //   const cardDiv = document.createElement("div");
+  //   cardDiv.className = "card";
+  //   cardDiv.classList.add("mycard");
+  //   cardDiv.dataset.index = i;
+
+  //   cardDiv.innerHTML = `
+  //     <p class="member-des">${member.description}</p>
+  //     <div class="card-content">
+  //       <div class="card-image">
+  //         <img src="./assets/Coding Potato.jpg" alt="..." class="profile-pic">
+  //       </div>
+  //       <div class="card-body">
+  //         <h5 class="card-title bold">${member.name}</h5>
+  //         <span>${member.mbti}</span>
+  //       </div>
+  //     </div>`;
+
+  //   // const teamCards = document.getElementById("team-cards");
+  //   document.getElementById("team-cards").appendChild(cardDiv);
+
+  //   // 모달1 X 버튼 눌렀을 때 모달창 숨기기
+  //   const closebtn = document.querySelector("#close");
+
+  //   closebtn.addEventListener("click", () => {
+  //     modal_1.style.display = "none";
+  //   });
+
+  //   // 팀원 카드에 각각 첫번째 모달창 띄우기
+  //   const modal_1 = document.querySelector(".modalFirst");
+
+  //   cardDiv.addEventListener("click", (event) => {
+  //     console.log(cardDiv.dataset.index + "의 상세보기 페이지");
+  //     modal_1.style.display = "flex";
+  //   });
+  // });
 }

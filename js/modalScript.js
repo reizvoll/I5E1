@@ -83,12 +83,6 @@ document.getElementById("yes").addEventListener("click", function () {
   modal_1.style.display = "none";
 });
 
-
-
-
-
-
-
 //멤버 카드 제출 관련 기능
 
 //멤버 db초기화
@@ -157,7 +151,7 @@ const saveImgFn = (file, saveLocation) => {
     })
     .then((url) => {
       imgUrl = url; //전역 변수 imgUrl에 넣는다
-      console.log('URL: ', imgUrl);
+      console.log("URL: ", imgUrl);
     })
     .catch((error) => {
       console.log(error);
@@ -166,105 +160,75 @@ const saveImgFn = (file, saveLocation) => {
 // create 완성
 
 //read
-memberFormDb.on('child_added', (snapshot)=>{
-  //snapshot에는 새로 들어온 데이터가 들어있다.
-  const memberObj = snapshot.val();
-  const memberId = snapshot.key; //데이터의 고유 ID 가져오기
+// memberFormDb.on("child_added", (snapshot) => {
+//   //snapshot에는 새로 들어온 데이터가 들어있다.
+//   const memberObj = snapshot.val();
+//   const memberId = snapshot.key; //데이터의 고유 ID 가져오기
 
-  const readTest = document.getElementById("readTest");
+//   const readTest = document.getElementById("readTest");
 
-  const name = memberObj.name;
-  const mbti = memberObj.mbti;
-  const blog = memberObj.blog;
-  const intro = memberObj.intro;
-  const description = memberObj.description;
-  const imgUrl = memberObj.imgUrl;
+//   const name = memberObj.name;
+//   const mbti = memberObj.mbti;
+//   const blog = memberObj.blog;
+//   const intro = memberObj.intro;
+//   const description = memberObj.description;
+//   const imgUrl = memberObj.imgUrl;
 
-  const memberDiv = document.createElement('div');
-  memberDiv.classList.add('memCard');
+//   const memberDiv = document.createElement("div");
+//   memberDiv.classList.add("memCard");
 
-  const nameDiv=document.createElement("div");
-  const mbtiDiv=document.createElement("div");
-  const introDiv=document.createElement("div");
-  const imgDiv=document.createElement("img");
+//   const nameDiv = document.createElement("div");
+//   const mbtiDiv = document.createElement("div");
+//   const introDiv = document.createElement("div");
+//   const imgDiv = document.createElement("img");
 
-  nameDiv.innerText = name;
-  mbtiDiv.innerText = mbti;
-  introDiv.innerText = intro;
-  imgDiv.src=imgUrl;
+//   nameDiv.innerText = name;
+//   mbtiDiv.innerText = mbti;
+//   introDiv.innerText = intro;
+//   imgDiv.src = imgUrl;
 
-  memberDiv.appendChild(nameDiv);
-  memberDiv.appendChild(mbtiDiv);
-  memberDiv.appendChild(introDiv);
-  memberDiv.appendChild(imgDiv);
-  readTest.appendChild(memberDiv);
-  console.log("들어왔나/")
+//   memberDiv.appendChild(nameDiv);
+//   memberDiv.appendChild(mbtiDiv);
+//   memberDiv.appendChild(introDiv);
+//   memberDiv.appendChild(imgDiv);
+//   readTest.appendChild(memberDiv);
+//   console.log("들어왔나/");
 
+//   memberDiv.addEventListener("click", () => {
+//     console.log(memberId);
+//     modal_1.style.display = "flex";
 
-  memberDiv.addEventListener('click',()=>{
-    console.log(memberId)
-    modal_1.style.display = "flex";
+//     //새로 카드 추가할 때
+//     document.getElementById("memberImg").src = imgUrl;
+//     document.getElementById("nameBox").innerText = name;
+//     document.getElementById("mbtiBox").innerText = mbti;
+//     document.getElementById("descriptionBox").innerText = description;
+//     document.getElementById("blogBtn").addEventListener("click", function () {
+//       location.href = blog; // 클릭 시 URL로 이동
 
-      //새로 카드 추가할 때 
-      document.getElementById("memberImg").src=imgUrl;
-      document.getElementById("nameBox").innerText=name;
-      document.getElementById("mbtiBox").innerText=mbti;
-      document.getElementById("descriptionBox").innerText=description;
-      document.getElementById("blogBtn").addEventListener('click', function() {
-        location.href = blog; // 클릭 시 URL로 이동
-      
+//       //수정 창 떴을 때 저장되어 있던 값 불러오기
+//       document.getElementById("name").value = name;
+//       document.getElementById("mbti").value = mbti;
+//       document.getElementById("blog").value = blog;
+//       document.getElementById("intro").value = intro;
+//       // document.getElementById("imgInput").value=imgUrl;
+//       document.getElementById("description").value = description;
 
-      //수정 창 떴을 때 저장되어 있던 값 불러오기
-      document.getElementById("name").value=name;
-      document.getElementById("mbti").value=mbti;
-      document.getElementById("blog").value=blog;
-      document.getElementById("intro").value=intro;
-      // document.getElementById("imgInput").value=imgUrl;
-      document.getElementById("description").value=description;
-
-
-      document.getElementById("yes").addEventListener('click',()=>{
-        memberFormDb.child(memberId).remove()
-        .then(()=>{
-            console.log("데이터 삭제 완료");
-            memberDiv.remove() //UI 카드제거
-        }).catch((error)=>{
-            console.log(error);
-        })
-    })
-    });
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//       document.getElementById("yes").addEventListener("click", () => {
+//         memberFormDb
+//           .child(memberId)
+//           .remove()
+//           .then(() => {
+//             console.log("데이터 삭제 완료");
+//             memberDiv.remove(); //UI 카드제거
+//           })
+//           .catch((error) => {
+//             console.log(error);
+//           });
+//       });
+//     });
+//   });
+// });
 
 //요소 값 가져오는 함수
 const getElementVal = (id) => {
