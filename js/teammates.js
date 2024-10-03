@@ -72,8 +72,21 @@ function createCards() {
     // const teamCards = document.getElementById("team-cards");
     document.getElementById("team-cards").appendChild(cardDiv);
 
+
+    
+    // 모달1 X 버튼 눌렀을 때 모달창 숨기기
+    const closebtn = document.querySelector("#close");
+
+    closebtn.addEventListener("click", () => {
+      modal_1.style.display = "none";
+    });
+    
+    // 팀원 카드에 각각 첫번째 모달창 띄우기
+    const modal_1 = document.querySelector(".modalFirst");
+
     cardDiv.addEventListener("click", (event) => {
       console.log(cardDiv.dataset.index + "의 상세보기 페이지");
+      modal_1.style.display = "flex";
     });
   });
 }
