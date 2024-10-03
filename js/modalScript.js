@@ -47,6 +47,13 @@ closebtn2.addEventListener("click", () => {
   modal_2.style.display = "none";
 });
 
+// 두번째 모달창 등록버튼 눌렀을 때 창 꺼지기
+const closeRegister = document.querySelector("#register");
+
+closeRegister.addEventListener("click", () => {
+  modal_2.style.display = "none";
+});
+
 // 첫번째 모달창 삭제 버튼 클릭 시 처리
 const modal_3 = document.querySelector(".modalThird");
 const btnOpenModal_3 = document.querySelector(".btn-open-modalThird");
