@@ -109,3 +109,16 @@
 
 
 /* 감자 수정 */
+
+/* 카드 추가 버튼 css */
+#createBtn{
+  padding: 5px 18px;
+  border-radius: 8px;
+  border: 0px;
+  background-color: #e6e6e6;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.35) 3px 2px 5px;
+  font-weight: 500;
+  position: relative;
+  left: 970px;
+}
