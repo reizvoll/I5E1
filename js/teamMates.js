@@ -17,7 +17,7 @@ function createCards() {
     const blog = memberObj.blog;
     const intro = memberObj.intro;
     const description = memberObj.description;
-    const imgUrl = memberObj.imgUrl;
+    const imgUrl = memberObj.imgUrl  || "./images/no_image.png";
 
     const cardDiv = document.createElement("div");
     cardDiv.className = "card";
