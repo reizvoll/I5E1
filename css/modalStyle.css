@@ -195,6 +195,7 @@
   gap: 5px;
 }
 
+
 input {
   width: 397px;
   height: 25px;
@@ -213,14 +214,11 @@ input {
 }
 
 #register {
-  position: absolute;
-  bottom: 10px;
-  right: 82px;
+
   width: 397px;
   height: 40px;
 }
 
-/* 세번째 모달 */
 
 
 .modalThird {

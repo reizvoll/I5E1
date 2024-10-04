@@ -25,7 +25,7 @@ function createCards() {
     // cardDiv.dataset.index = i;
 
     cardDiv.innerHTML = `
-      <p class="member-des"><span class="fontSize">" </span>${intro}<span class="fontSize"> "</span></p>
+      <p class="member-des"><span>"</span>${intro}<span>"</span></p>
       <div class="card-content">
         <div class="card-image">
           <img src="${imgUrl}" alt="..." class="profile-pic">
