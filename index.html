@@ -117,10 +117,12 @@
           <div class="icon2">
             <i id="close2" class="fa-solid fa-x"></i>
           </div>
-  
-          <input type="file" accept="image/*" id="imgInput" />
-          <button id="imgSmt">사진 제출</button>
-  
+          <div id="imageInput">
+            <!-- imgPreview 추가 -->
+            <img src="./images/no_image.png" id="imgPreview">
+            <input type="file" accept="image/*" id="imgInput" />
+            <button id="imgSmt">사진 제출</button>
+          </div>
           <form id="memberForm">
             <div class="info2">
               <div>

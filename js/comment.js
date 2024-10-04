@@ -74,7 +74,7 @@ function formatTimeAgo(timeDiff, originalDate) {
             if (timeDiff < 1) return "방금 전";
             return `${timeDiff}분 전`;
         } else if (timeDiff < 60 * 5) { // Less than 5 hours
-            const hoursDiff = Math.floor(minutesDiff / 60);
+            const hoursDiff = Math.floor(timeDiff / 60);
             return `${hoursDiff}시간 전`;
         } else {
             return new Date(originalDate).toLocaleString(); // Show the original date if more than 5 hours
