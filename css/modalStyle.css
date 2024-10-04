@@ -16,22 +16,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal_body1 {
-  z-index: 1000;
-  position: relative;
-  top: 50%;
-  width: 1032px;
-  height: 408px;
-  padding: 40px;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .icon1 {
   position: absolute;
@@ -82,22 +67,38 @@
   background-color: #f0f0f0;
 }
 
-.modal_body1 > img {
+.memverImgDiv{
   width: 428px;
   height: 280px;
+  overflow: hidden;
+}
+
+.memverImgDiv > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nameBlogBtn{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.nameBlogBtn > .name {
+  max-width: 65%;
 }
 
 .nameBlogBtn button {
   background-color: #2C2C2C;
   color: #fff;
-  flex-shrink: 0;
-  height: 48px;
+  font-size: 13px;
+  height: 30px;
+  line-height: 15px;
+
+
 }
 
-.nameBlogBtn{
-  display: flex;
-  gap: 8px;
-}
+
 
 .info1 {
   width: 428px;
@@ -124,22 +125,39 @@
 /* 두번째 모달 */
 
 .modalSecond {
+  margin: 0 auto;
   z-index: 999;
-
   position: fixed;
   display: none;
-  
   justify-content: center;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+
+
+
 .modal_body2 {
+  z-index: 1000;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 1032px;
+  height: 408px;
+  padding: 40px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal_body1 {
   z-index: 1000;
   position: relative;
   top: 50%;
@@ -172,6 +190,7 @@
   width: 428px;
   display: flex;
   flex-direction: column;
+  align-items: start;
   text-align: start;
   gap: 5px;
 }

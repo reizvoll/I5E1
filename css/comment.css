@@ -10,12 +10,14 @@ p {
 }
 
 .comment {
+    
     padding: 70px;
     padding-top: 100px;
     min-width: 1200px;
 }
 
 .guestbook {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 24px 0;
 }

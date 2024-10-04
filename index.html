@@ -77,109 +77,118 @@
     </h3>
   </div>
 
-  <!-- 첫번째 모달 -->
-  <div class="modalFirst">
-    <div class="modal_body1">
-      <div class="icon1">
-        <i id="menuBtn1" class="fa-solid fa-ellipsis-vertical" style="margin-right: 20px"></i>
-        <div id="menu1" class="menu">
-          <button id="editBtn" class="btnOpenModal_2">수정</button>
-          <button id="deleteBtn" class="btn-open-modalThird">삭제</button>
+    <!-- 첫번째 모달 -->
+    <div class="modalFirst">
+        <div class="modal_body1">
+          <div class="icon1">
+            <i
+              id="menuBtn1"
+              class="fa-solid fa-ellipsis-vertical"
+              style="margin-right: 20px"
+            ></i>
+            <div id="menu1" class="menu">
+              <button id="editBtn" class="btnOpenModal_2">수정</button>
+              <button id="deleteBtn" class="btn-open-modalThird">삭제</button>
+            </div>
+            <i id="close" class="fa-solid fa-x"></i>
+          </div>
+          <div class="memverImgDiv">
+          <img id="memberImg"
+          />
         </div>
-        <i id="close" class="fa-solid fa-x"></i>
-      </div>
-      <img id="memberImg" />
-      <div class="info1">
-        <div class="nameBlogBtn">
-          <div class="name" id="nameBox"></div>
-          <button id="blogBtn" type="button" class="btn">
-            블로그 가기 >
-          </button>
-        </div>
-        <span id="mbtiBox"></span>
-        <div id="descriptionBox">
-          <br />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 두번째 모달 -->
-  <div class="modalSecond">
-    <div class="modal_body2">
-      <div class="icon2">
-        <i id="close2" class="fa-solid fa-x"></i>
-      </div>
-      <div id="imageInput">
-        <!-- imgPreview 추가 -->
-        <img src="./images/no_image.png" id="imgPreview">
-        <input type="file" accept="image/*" id="imgInput" />
-        <button id="imgSmt">사진 제출</button>
-      </div>
-      <form id="memberForm">
-        <div class="info2">
-          <div>
-            <span>이름<br /></span>
-            <input id="name" type="text" placeholder="이름" />
+          <div class="info1">
+            <div class="nameBlogBtn">
+              <div class="name" id="nameBox"></div>
+              <button id="blogBtn" type="button" class="btn">
+                블로그 가기 >
+              </button>    
+            </div>
+            <span id="mbtiBox"></span>
+            <div id="descriptionBox">
+              <br />
+            </div>
           </div>
-          <div>
-            <span>MBTI</span>
-            <input id="mbti" type="text" placeholder="MBTI" />
-          </div>
-          <div>
-            <span>블로그 주소</span>
-            <input id="blog" type="text" placeholder="블로그 주소" />
-          </div>
-          <div>
-            <span>한줄 소개</span>
-            <input id="intro" type="text" placeholder="한줄 소개" />
-          </div>
-          <div>
-            <span>자기소개</span>
-            <textarea id="description" class="me" type="text" placeholder="자기소개"></textarea>
-          </div>
-          <button id="register" type="submit" class="btn btn-dark">
-            등록
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 세번째 모달 -->
-  <div class="modalThird">
-    <div class="modal_body3">
-      <div class="icon3">
-        <i id="close3" class="fa-solid fa-x"></i>
-      </div>
-      <div class="info3">
-        <span>글을 삭제하시겠습니까?<br /></span>
-        <div class="btn">
-          <button id="yes" type="button" class="btn btn-outline-dark">
-            네
-          </button>
-          <button id="no" type="button" class="btn btn-dark">아니오</button>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- 팀원소개 섹션-->
-  <div class="teammates" id="teammates">
-    <div class="team-intro">
-      <div>
-        <h4 class="tit2">팀원 소개</h4>
-        <p>Subheading</p>
+  
+          <!-- 두번째 모달 -->
+    <div class="modalSecond">
+        <div class="modal_body2">
+          <div class="icon2">
+            <i id="close2" class="fa-solid fa-x"></i>
+          </div>
+          <div id="imageInput">
+            <!-- imgPreview 추가 -->
+            <img src="./images/no_image.png" id="imgPreview">
+            <input type="file" accept="image/*" id="imgInput" />
+            <button id="imgSmt">사진 제출</button>
+          </div>
+          <form id="memberForm">
+            <div class="info2">
+              <div>
+                <span>이름<br /></span>
+                <input id="name" type="text" placeholder="이름" />
+              </div>
+              <div>
+                <span>MBTI</span>
+                <input id="mbti" type="text" placeholder="MBTI" />
+              </div>
+              <div>
+                <span>블로그 주소</span>
+                <input id="blog" type="text" placeholder="블로그 주소" />
+              </div>
+              <div>
+                <span>한줄 소개</span>
+                <input id="intro" type="text" placeholder="한줄 소개" />
+              </div>
+              <div>
+                <span>자기소개</span>
+                <textarea
+                  id="description"
+                  class="me"
+                  type="text"
+                  placeholder="자기소개"
+                ></textarea>
+              </div>
+              <div>
+                <button id="register" type="submit" class="btn btn-dark">
+                  등록
+                </button>
+            </div>
+            </div>
+          </form>
+        </div>
       </div>
-      <button id="createBtn">카드 추가</button>
+  
+          <!-- 세번째 모달 -->
+    <div class="modalThird">
+        <div class="modal_body3">
+          <div class="icon3">
+            <i id="close3" class="fa-solid fa-x"></i>
+          </div>
+          <div class="info3">
+            <span>글을 삭제하시겠습니까?<br /></span>
+            <div class="btn">
+              <button id="yes" type="button" class="btn btn-outline-dark">
+                네
+              </button>
+              <button id="no" type="button" class="btn btn-dark">아니오</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <!-- 팀원소개 섹션-->
+    <div class="teammates" id="teammates">
+      <h4 class="tit2"> 팀원 소개 </h4>
+      <h6 class="sub2"> 저희 팀원을 소개합니다</h6>
+          <button id="createBtn">카드 추가</button>
+    
+        <!-- 팀원 카드 모음  potato-row -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 team-cards" id="team-cards">
+            <!-- 팀원 카드 -->
+        </div>
     </div>
-
-
-    <!-- 팀원 카드 모음  potato-row -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 team-cards" id="team-cards">
-      <!-- 팀원 카드 -->
-    </div>
-  </div>
 
 
   <div class="comment" id="nbar3">
@@ -195,17 +204,17 @@
 
     <!-- 댓글 입력 폼 종료 -->
 
-    <!-- 말풍선 -->
-    <div class="guestbook" id="guestbook"></div>
-  </div>
-  <!-- 각각의 js 이름 스크립트에 넣기(아래처럼) -->
-
-  <!-- firebase CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"> </script>
-  <script src="js/app.js" type="module"></script>
-  <!-- <script src="js/teammates.js"></script> -->
-  <script src="https://kit.fontawesome.com/493cc16663.js" crossorigin="anonymous"></script>
-
+        <!-- 말풍선 -->
+        <div class="guestbook" id="guestbook"></div>
+    </div>
+    <!-- 각각의 js 이름 스크립트에 넣기(아래처럼) -->
+    
+    <!-- firebase CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"> </script>
+    <script src="js/app.js" type="module"></script>
+    <!-- <script src="js/teammates.js"></script> -->
+    <script src="https://kit.fontawesome.com/493cc16663.js" crossorigin="anonymous"></script>
+    
 
   <!-- 섹션 1 : 푸터 -->
   <footer class="footer">

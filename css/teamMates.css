@@ -113,7 +113,7 @@
   background-color: #2C2C2C;
   color: #fff;
   font-weight: 500;
-  position: relative;
-  left: 960px;
+  float: right;
+  margin-bottom: 20px;
   
 }
