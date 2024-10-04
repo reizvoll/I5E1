@@ -55,11 +55,16 @@ body {
 }
 
 .nav-link {
-
     color: #1E1E1E;
     white-space: nowrap;
     margin-left: 20px;
+    font-weight: normal;
+    transition: font-weight 0.3s ease; 
+}
 
+.nav-link:hover {
+    font-weight: bold;
+    color: #000;
 }
 
 #nav-link-ondo {
