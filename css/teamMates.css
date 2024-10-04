@@ -106,13 +106,13 @@
 /* 카드 추가 버튼 css */
 #createBtn{
 
-  padding: 15px 25px;
+  padding: 10px 20px;
   border-radius: 8px;
   border: 0px;
   background-color: #2C2C2C;
   color: #fff;
   font-weight: 500;
   position: relative;
-  left: 950px;
+  left: 960px;
   
 }
