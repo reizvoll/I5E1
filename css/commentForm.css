@@ -36,8 +36,3 @@
 .commentBox:focus, input:focus{
     outline: none;
 }
-
-
-.comment {
-    padding:  70px;
-}
