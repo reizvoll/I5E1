@@ -50,6 +50,7 @@ body {
   background-repeat: no-repeat;
   margin: 0 auto;
   text-align: left;
+  position: relative; /* 얼굴 div와 tooltip을 배치할 기준 */
 }
 
 .tit2 {
@@ -65,6 +66,103 @@ body {
   margin-bottom: 20px;
 }
 
+
+.face1{
+  position: relative;
+  width: 20%;
+  height: 65%;
+  top: 30%;
+
+}
+.face2{
+  position: relative;
+  width: 13%;
+  height: 48%;
+  top: -27%;
+  left: 28%;
+
+}
+.face3{
+  position: relative;
+  width: 12%;
+  height: 48%;
+  top: -75%;
+  left: 43%;
+
+}
+.face4{
+  position: relative;
+  width: 11%;
+  height: 48%;
+  top: -121%;
+  left: 57%;
+
+}
+.face5{
+  position: relative;
+  width: 11%;
+  height: 48%;
+  top: -170%;
+  left: 70%;
+
+}
+.face6{
+  position: relative;
+  width: 11%;
+  height: 48%;
+  top: -217%;
+  left: 85%;
+
+}
+
+.tooltip_back{
+  position: relative;
+  top: -20px;
+  width: 100%;
+  height: 80%;
+
+  z-index: 100;
+}
+
+.tooltip_name {
+  font-weight: 700;
+  top: calc(-(100vh - 80%));
+  left: 28%;
+  text-align: center;
+  position: absolute; /* 위치 조정 */
+  z-index: 10;
+  width: 70px; /* 넓이 조정 */
+  height: auto; /* 높이는 자동으로 조정 */
+  padding: 5px; /* 안쪽 여백 추가 */
+  line-height: 20px; /* 텍스트 라인 높이 */
+  background-color: #fff; /* 배경색 */
+  border-radius: 5px; /* 둥근 모서리 */
+  visibility: hidden; /* 기본적으로 숨김 */
+  opacity: 0; /* 기본적으로 투명 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: visibility 0s, opacity 0.5s ease; /* 부드럽게 전환 */
+}
+.tooltip_name::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 말꼬리가 아래쪽에 위치하도록 설정 */
+  left: 35%; /* 말꼬리의 위치 조정 */
+  border-width: 10px; /* 삼각형 크기 조정 */
+  border-style: solid;
+  border-color: white transparent transparent transparent; /* 아래로 향하는 세모 */
+  display: block;
+}
+/* hover 시 보이도록 설정 */
+.face1:hover .tooltip_name,
+.face2:hover .tooltip_name,
+.face3:hover .tooltip_name,
+.face4:hover .tooltip_name,
+.face5:hover .tooltip_name,
+.face6:hover .tooltip_name {
+  visibility: visible; /* 보이도록 설정 */
+  opacity: 1; /* 불투명하게 설정 */
+}
+
 .introduce {
   font-size: 28px;
   font-weight: 400;
@@ -76,6 +174,4 @@ body {
   position: relative;
   top: 20%;
   transform: translateY(-50%);
-
-
 }
