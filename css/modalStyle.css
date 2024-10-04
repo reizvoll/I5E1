@@ -88,7 +88,8 @@
 }
 
 .modal_body1 button {
-  background-color: #e3e3e3;
+  background-color: #2C2C2C;
+  color: #fff;
   flex-shrink: 0;
   height: 48px;
 }
