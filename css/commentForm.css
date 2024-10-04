@@ -25,7 +25,7 @@
 
 .commentSubmtBtn {
     height: auto;
-    max-width: 90px;
+    min-width: 90px;
     border-radius: 10px;
     border-width: 0;
     cursor: pointer;
