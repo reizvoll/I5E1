@@ -12,7 +12,10 @@ createBtn.addEventListener("click", () => {
   document.getElementById('blog').value="";
   document.getElementById('intro').value="";
   document.getElementById('description').value="";
+  document.getElementById("imgInput").value ="";
   document.getElementById("imgPreview").src ="./images/no_image.png";
+
+
   window.currentMemberId = null;
   modal_2.style.display = "flex";
 });
@@ -111,6 +114,7 @@ function memberSubmit(e) {
 
   // db에 값 넣는 함수 (현재 멤버 ID를 전달)
   saveMember(name, mbti, blog, intro, description, imgUrl, window.currentMemberId);
+  imgUrl = ""; // 여기에 추가
 }
 
 
@@ -127,10 +131,13 @@ const saveMember = (name, mbti, blog, intro, description, imgUrl, currentMemberI
         description: description,
         imgUrl: imgUrl || existingData.imgUrl, // imgUrl가 비어있으면 기존 imgUrl 사용
       };
+      
       return memberFormDb.child(currentMemberId).update(updatedData);
     }).then(() => {
       console.log("멤버 정보 수정 완료");
+ 
       location.reload(); 
+
     }).catch((error) => {
       console.log("수정 중 오류: ", error);
     });
@@ -146,6 +153,7 @@ const saveMember = (name, mbti, blog, intro, description, imgUrl, currentMemberI
       imgUrl: imgUrl,
     }).then(() => {
       console.log("새로운 멤버 등록 완료");
+      imgUrl = ""; // 등록 후 전역변수 비우기
       
     }).catch((error) => {
       console.log("등록 중 오류: ", error);
