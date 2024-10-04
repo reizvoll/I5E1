@@ -17,7 +17,8 @@
 .team-intro {
 
   height: 60px;
-
+  display: flex; 
+  flex-direction: row; 
 }
 
 .team-cards {
