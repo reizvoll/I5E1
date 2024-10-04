@@ -154,7 +154,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
 }
 
 .modal_body1 {
@@ -190,6 +190,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  margin-top: 20px;  
 }
 
 
@@ -201,6 +202,40 @@
   text-align: start;
   gap: 5px;
 }
+
+#imageInput>div {
+display: flex;
+align-items: center;
+gap: 10px;
+padding-top: 10px;
+}
+
+.imgPreview {
+  width: 100px; /* 미리보기 이미지의 가로 크기 */
+  height: auto; /* 비율 유지 */
+  border: 1px solid #ccc; /* 테두리 */
+  border-radius: 5px; /* 모서리 둥글게 */
+}
+
+.imgInput {
+  display: block; /* 기본 인풋 숨김 */
+  max-width: 80%;
+
+}
+
+button#imgSmt {
+  height: 40px;
+  flex-grow: 1;
+  padding: 5px 0;
+  background-color: #212529; /* 배경색 */
+  color: white; /* 글자색 */
+  border: none; /* 기본 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 호버 시 부드러운 전환 효과 */
+}
+
+
 
 
 input {
@@ -284,3 +319,5 @@ span {
   width: 100px;
   height: 40px;
 }
+
+
