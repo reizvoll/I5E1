@@ -50,6 +50,7 @@ function createCards() {
     const modal_1 = document.querySelector(".modalFirst");
 
     cardDiv.addEventListener("click", (event) => {
+      // 
       modal_1.style.display = "flex";
       window.currentMemberId = memberId;
 
