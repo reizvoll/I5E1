@@ -21,6 +21,8 @@ p {
 }
 
 .guestbook-container {
+    width: max-content;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
