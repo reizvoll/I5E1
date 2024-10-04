@@ -224,7 +224,8 @@ padding-top: 10px;
 }
 
 button#imgSmt {
-  height: 40px;
+  height: 30px;
+  line-height: 15px;
   flex-grow: 1;
   padding: 5px 0;
   background-color: #212529; /* 배경색 */
@@ -252,6 +253,7 @@ input {
   height: 50px;
   border-radius: 5px;
   padding: 5px 0 0 5px;
+  resize: none;
 
 }
 
@@ -320,4 +322,21 @@ span {
   height: 40px;
 }
 
+input[type="file"] {
+  height: fit-content;
+  border:none;
+}
+input[type="file"]::file-selector-button {
+  width: 80px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgb(77, 77, 77);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right :13px ;
+}
 
+input[type="file"]::file-selector-button:hover {
+  background: #212529;
+  color: #fff;
+}
