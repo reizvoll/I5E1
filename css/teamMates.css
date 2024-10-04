@@ -28,15 +28,14 @@
   min-height: 342px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  row-gap: 48px;
+  justify-content: flex-start; /* Align items to the start */
+  gap: 48px; /* Consistent gap between cards */
 
 }
 
 .mycard {
 
-  max-width: 30%;
+  flex-basis: calc(33.33% - 32px);
   height: 150px;
   padding: 20px;
   border-radius: 0.5em;
