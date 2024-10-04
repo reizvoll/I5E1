@@ -1,20 +1,24 @@
-// teammates.js 파일이 실행되고 나서 실행되어야 하는 로직입니다.
-//스크립트가 비동기 처리에 대해서 이번 프로젝트에 다루는데 한계가 있어 셋타임아웃으로 처리합니다. -강민튜터님-
-// setTimeout(function(){
-//   const btnOpenModal_1 = document.querySelector(".mycard");
-//   btnOpenModal_1.addEventListener("click", () => {
-//     modal_1.style.display = "flex";
-//   });
-// }, 2000)
 
+window.currentMemberId = null; //멤버데이터 ID값 저장 전역변수
 const menuBtn1 = document.getElementById("menuBtn1");
 const menu1 = document.getElementById("menu1");
 
 const createBtn = document.getElementById("createBtn");
 
 createBtn.addEventListener("click", () => {
+// 카드 추가 버튼 클릭 시 내용 지우기
+  document.getElementById('name').value="";
+  document.getElementById('mbti').value="";
+  document.getElementById('blog').value="";
+  document.getElementById('intro').value="";
+  document.getElementById('description').value="";
+  document.getElementById("imgPreview").src ="./images/no_image.png";
+  window.currentMemberId = null;
   modal_2.style.display = "block";
 });
+
+
+
 
 // 메뉴 버튼 클릭 시 메뉴 보이기
 menuBtn1.addEventListener("click", function (e) {
@@ -39,6 +43,7 @@ document.addEventListener("click", function (e) {
     menu1.style.display = "none";
   }
 });
+
 
 // 모달2 X 버튼 눌렀을 때 모달창 숨기기
 const closebtn2 = document.querySelector("#close2");
@@ -93,32 +98,61 @@ const Imgstorage = firebase.storage();
 
 let imgUrl = ""; // 이미지 url을 저장할 전역 변수
 
+
 document.getElementById("memberForm").addEventListener("submit", memberSubmit);
 
 function memberSubmit(e) {
-  e.preventDefault(); //새로고침방지
-
+  e.preventDefault(); // 새로고침 방지
   var name = getElementVal("name");
   var mbti = getElementVal("mbti");
   var blog = getElementVal("blog");
   var intro = getElementVal("intro");
   var description = getElementVal("description");
 
-  //db에 값 넣는 함수
-  saveMember(name, mbti, blog, intro, description, imgUrl);
+  // db에 값 넣는 함수 (현재 멤버 ID를 전달)
+  saveMember(name, mbti, blog, intro, description, imgUrl, window.currentMemberId);
 }
 
-const saveMember = (name, mbti, blog, intro, description, imgUrl) => {
-  var newMember = memberFormDb.push();
-  newMember.set({
-    name: name,
-    mbti: mbti,
-    blog: blog,
-    intro: intro,
-    description: description,
-    imgUrl: imgUrl,
-  });
+
+const saveMember = (name, mbti, blog, intro, description, imgUrl, currentMemberId) => {
+  if (currentMemberId) {
+    // 수정 (memberId 있을 때)
+    memberFormDb.child(currentMemberId).once("value").then((snapshot) => {
+      const existingData = snapshot.val(); // 기존 데이터 가져오기
+      const updatedData = {
+        name: name,
+        mbti: mbti,
+        blog: blog,
+        intro: intro,
+        description: description,
+        imgUrl: imgUrl || existingData.imgUrl, // imgUrl가 비어있으면 기존 imgUrl 사용
+      };
+      return memberFormDb.child(currentMemberId).update(updatedData);
+    }).then(() => {
+      console.log("멤버 정보 수정 완료");
+      location.reload(); 
+    }).catch((error) => {
+      console.log("수정 중 오류: ", error);
+    });
+  } else {
+    // 새로운 멤버 등록
+    var newMember = memberFormDb.push();
+    newMember.set({
+      name: name,
+      mbti: mbti,
+      blog: blog,
+      intro: intro,
+      description: description,
+      imgUrl: imgUrl,
+    }).then(() => {
+      console.log("새로운 멤버 등록 완료");
+      
+    }).catch((error) => {
+      console.log("등록 중 오류: ", error);
+    });
+  }
 };
+
 
 // 사진 스토어에 업로드
 document.getElementById("imgSmt").addEventListener("click", submitImg);
@@ -133,102 +167,39 @@ function submitImg(e) {
     //파이어베이스 스토리지에 저장할 경로 설정
     var storageRef = Imgstorage.ref();
     var saveLocation = storageRef.child("image/" + file.name);
-
     //이미지 스토어에 저장할 함구를 만들고 여기다 선언할것
-    saveImgFn(file, saveLocation);
+    saveImgFn(file, saveLocation)
+      .then((url) => {
+        document.getElementById("imgPreview").src = url; // 업로드된 이미지 URL을 미리보기 src에 설정
+      })
+      .catch((error) => {
+        console.log("미리보기 업데이트 중 오류: ", error);
+      });
+    
   } else {
-    console.log("파일 선택해주세요");
+    alert("파일을 선택해주세요");
   }
 }
 
-//이미지 스토어에 저장할 함수
+// 이미지 스토어에 저장할 함수
 const saveImgFn = (file, saveLocation) => {
-  saveLocation
+  return saveLocation
     .put(file)
     .then((snapShot) => {
       console.log("업로드 성공", file.name);
-      return snapShot.ref.getDownloadURL();
+      return snapShot.ref.getDownloadURL(); // 이미지의 다운로드 URL을 반환
     })
     .then((url) => {
-      imgUrl = url; //전역 변수 imgUrl에 넣는다
-      console.log("URL: ", imgUrl);
+      imgUrl = url; // 전역 변수 imgUrl에 저장
+      console.log("imgUrl: ", imgUrl);
+      return imgUrl; // url 반환
     })
     .catch((error) => {
-      console.log(error);
+      console.log("이미지 업로드 실패: ", error);
+      
     });
 };
 // create 완성
-
-//read
-// memberFormDb.on("child_added", (snapshot) => {
-//   //snapshot에는 새로 들어온 데이터가 들어있다.
-//   const memberObj = snapshot.val();
-//   const memberId = snapshot.key; //데이터의 고유 ID 가져오기
-
-//   const readTest = document.getElementById("readTest");
-
-//   const name = memberObj.name;
-//   const mbti = memberObj.mbti;
-//   const blog = memberObj.blog;
-//   const intro = memberObj.intro;
-//   const description = memberObj.description;
-//   const imgUrl = memberObj.imgUrl;
-
-//   const memberDiv = document.createElement("div");
-//   memberDiv.classList.add("memCard");
-
-//   const nameDiv = document.createElement("div");
-//   const mbtiDiv = document.createElement("div");
-//   const introDiv = document.createElement("div");
-//   const imgDiv = document.createElement("img");
-
-//   nameDiv.innerText = name;
-//   mbtiDiv.innerText = mbti;
-//   introDiv.innerText = intro;
-//   imgDiv.src = imgUrl;
-
-//   memberDiv.appendChild(nameDiv);
-//   memberDiv.appendChild(mbtiDiv);
-//   memberDiv.appendChild(introDiv);
-//   memberDiv.appendChild(imgDiv);
-//   readTest.appendChild(memberDiv);
-//   console.log("들어왔나/");
-
-//   memberDiv.addEventListener("click", () => {
-//     console.log(memberId);
-//     modal_1.style.display = "flex";
-
-//     //새로 카드 추가할 때
-//     document.getElementById("memberImg").src = imgUrl;
-//     document.getElementById("nameBox").innerText = name;
-//     document.getElementById("mbtiBox").innerText = mbti;
-//     document.getElementById("descriptionBox").innerText = description;
-//     document.getElementById("blogBtn").addEventListener("click", function () {
-//       location.href = blog; // 클릭 시 URL로 이동
-
-//       //수정 창 떴을 때 저장되어 있던 값 불러오기
-//       document.getElementById("name").value = name;
-//       document.getElementById("mbti").value = mbti;
-//       document.getElementById("blog").value = blog;
-//       document.getElementById("intro").value = intro;
-//       // document.getElementById("imgInput").value=imgUrl;
-//       document.getElementById("description").value = description;
-
-//       document.getElementById("yes").addEventListener("click", () => {
-//         memberFormDb
-//           .child(memberId)
-//           .remove()
-//           .then(() => {
-//             console.log("데이터 삭제 완료");
-//             memberDiv.remove(); //UI 카드제거
-//           })
-//           .catch((error) => {
-//             console.log(error);
-//           });
-//       });
-//     });
-//   });
-// });
 
 //요소 값 가져오는 함수
 const getElementVal = (id) => {

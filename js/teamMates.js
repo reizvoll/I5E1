@@ -1,45 +1,8 @@
-const members = [
-  {
-    description: "&#34유일무E리-다..쉽지않다&#34",
-    name: "임지영",
-    mbti: "ENTJ",
-    image: "",
-  },
-  {
-    description: "&#34일할땐 안 누워있어요&#34",
-    name: "원윤선",
-    mbti: "ISFP",
-    image: "",
-  },
-  {
-    description: "&#34기세로 간다&#34",
-    name: "김진실",
-    mbti: "INFP",
-    image: "",
-  },
-  {
-    description: "&#34겉핥기 개발자&#34",
-    name: "박가나",
-    mbti: "ISTJ",
-    image: "",
-  },
-  {
-    description: "&#34전역 1달차 따끈한 킹반인&#34",
-    name: "박하은",
-    mbti: "ISFJ",
-    image: "",
-  },
-  {
-    description: "&#34감자라 굴러가유&#34",
-    name: "박채현",
-    mbti: "INTJ",
-    image: "",
-  },
-];
 
 document.addEventListener("DOMContentLoaded", function () {
   createCards();
 });
+
 
 
 function createCards() {
@@ -47,7 +10,6 @@ function createCards() {
 
   memberFormDb.on("child_added", (snapshot) => {
     const memberObj = snapshot.val();
-
     const memberId = snapshot.key; //데이터의 고유 ID 가져오기
 
     const name = memberObj.name;
@@ -63,7 +25,7 @@ function createCards() {
     // cardDiv.dataset.index = i;
 
     cardDiv.innerHTML = `
-      <p class="member-des">${intro}</p>
+      <p class="member-des"><span>"</span>${intro}<span>"</span></p>
       <div class="card-content">
         <div class="card-image">
           <img src="${imgUrl}" alt="..." class="profile-pic">
@@ -83,14 +45,15 @@ function createCards() {
     closebtn.addEventListener("click", () => {
       modal_1.style.display = "none";
     });
-
+    
     // 팀원 카드에 각각 첫번째 모달창 띄우기
     const modal_1 = document.querySelector(".modalFirst");
 
     cardDiv.addEventListener("click", (event) => {
       modal_1.style.display = "flex";
+      window.currentMemberId = memberId;
 
-      //새로 카드 추가할 때
+      //카드 내용 불러오기
       document.getElementById("memberImg").src = imgUrl;
       document.getElementById("nameBox").innerText = name;
       document.getElementById("mbtiBox").innerText = mbti;
@@ -99,13 +62,16 @@ function createCards() {
       document.getElementById("blogBtn").addEventListener("click", function () {
         location.href = blog; // 클릭 시 URL로 이동
       });
+      
+      //수정창 떴을 때 이미지
+      document.getElementById("imgPreview").src = imgUrl;
+
 
       //수정 창 떴을 때 저장되어 있던 값 불러오기
       document.getElementById("name").value = name;
       document.getElementById("mbti").value = mbti;
       document.getElementById("blog").value = blog;
       document.getElementById("intro").value = intro;
-      // document.getElementById("imgInput").value=imgUrl;
       document.getElementById("description").value = description;
 
       document.getElementById("yes").addEventListener("click", () => {
@@ -120,6 +86,9 @@ function createCards() {
             console.log(error);
           });
       });
+
+
+
     });
   });
 }
