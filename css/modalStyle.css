@@ -26,32 +26,46 @@
 }
 
 #menu1 {
-  display: none;
+  display: none; 
   position: absolute;
-  top: 35px;
-  right: 20px;
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  width: 65px;
+  top: 45px; 
+  right: 17px; 
+  background-color: white; 
+  padding: 10px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  font-size: 14px; 
+  display: flex; 
+  flex-direction: column; 
+  width: 70px; /* 원하는 너비로 조정 */
+  border: 1px solid #ddd; /* 회색 테두리 */
 }
 
-/* 삼각형 모양 (위쪽에 붙은 화살표) */
-/* #menu::before {
+#menu1::after {
   content: "";
   position: absolute;
-  top: -10px;
-  right: 30px;
-  border-width: 0 10px 10px 10px;
+  top: -19px; /* 삼각형 위치 조정 */
+  right: 21px; /* 위치 조정 */
+  border-width: 10px; /* 삼각형 크기 */
   border-style: solid;
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent white transparent; /* 아래로 향하는 흰색 삼각형 */
   display: block;
-} */
+}
+
+#menu1::before {
+  content: "";
+  position: absolute;
+  top: -21px; /* 회색 테두리 삼각형이 약간 더 위로 */
+  right: 20px; /* 위치를 흰색 삼각형과 맞춤 */
+  border-width: 11px; /* 회색 테두리 크기를 조금 더 크게 */
+  border-style: solid;
+  border-color: transparent transparent #ddd transparent; /* 아래로 향하는 회색 삼각형 */
+  display: block;
+}
+
+
+
+
 
 #menu1 button {
   background: none;
@@ -59,7 +73,7 @@
   cursor: pointer;
   display: block;
   padding: 5px 10px;
-  font-size: 10px;
+  font-size: 13px;
   text-align: left;
 }
 
