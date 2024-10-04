@@ -17,7 +17,9 @@ body {
   font-weight: 700;
   color: #1e1e1e;
 }
-
+.wrap{
+  width: 100%;
+}
 .sub1 {
   font-size: 32px;
   font-weight: 400;
