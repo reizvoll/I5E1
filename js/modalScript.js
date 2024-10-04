@@ -14,7 +14,7 @@ createBtn.addEventListener("click", () => {
   document.getElementById('description').value="";
   document.getElementById("imgPreview").src ="./images/no_image.png";
   window.currentMemberId = null;
-  modal_2.style.display = "block";
+  modal_2.style.display = "flex";
 });
 
 

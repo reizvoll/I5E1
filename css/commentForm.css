@@ -3,7 +3,7 @@
     align-items: center;
     align-items: stretch;
     gap: 15px;
-    min-width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 24px 64px;
     margin: 0 auto;
