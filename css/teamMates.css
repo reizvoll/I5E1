@@ -34,12 +34,15 @@
 
 .mycard {
   flex-basis: calc(33.33% - 32px);
-  height: 150px;
+  min-height: 150px;
   padding: 20px;
   border-radius: 0.5em;
   margin-top: 0;
   transition: 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .mycard:hover {
