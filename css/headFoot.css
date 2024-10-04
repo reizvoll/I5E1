@@ -1,54 +1,11 @@
-.navbar-custom {
-
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    width: 100%;
-
-}
-
-.navbar-center {
-
-    display: flex;
-    margin-left: auto;
-    flex-wrap: nowrap;
-
-}
-
-.footer-name span {
-
-    margin-right: 80px;
-    white-space: nowrap;
-
-}
-
-
-
 body {
 
     padding-top: 100px;
 
-
 }
 
-.nav-link {
 
-    color: #1E1E1E;
-    white-space: nowrap;
-
-}
-
-.footer {
-
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 50px;
-    border-top: 1px solid #e0e0e0;
-    height: 259px;
-
-}
+/* header */
 
 .navbar {
 
@@ -60,10 +17,33 @@ body {
 
 }
 
+.container-fluid {
+
+    flex-wrap: nowrap;
+
+}
+
+.navbar-custom {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+
+}
+
 .nbar-logo {
 
     width: 74px;
     height: 74px;
+
+}
+
+.navbar-center {
+
+    display: flex;
+    margin-left: auto;
+    flex-wrap: nowrap;
 
 }
 
@@ -75,9 +55,16 @@ body {
 }
 
 .nav-link {
-
+    color: #1E1E1E;
+    white-space: nowrap;
     margin-left: 20px;
+    font-weight: normal;
+    transition: font-weight 0.3s ease; 
+}
 
+.nav-link:not(#nav-link-ondo):hover {
+    font-weight: bold;
+    color: #000;
 }
 
 #nav-link-ondo {
@@ -86,14 +73,27 @@ body {
 
 }
 
-.footer {
+.weather-icon {
 
+    width: 24px;
+    height: 24px;
+
+}
+
+
+/* footer */
+
+.footer {
+    background-color: white;
+    height: 259px;
     width: 100%;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 0px;
+    padding: 50px;
+    border-top: 1px solid #e0e0e0;
 
 }
 
@@ -150,6 +150,13 @@ body {
 
 }
 
+.footer-name span {
+
+    margin-right: 80px;
+    white-space: nowrap;
+
+}
+
 #All-rights-reserved {
 
     color: #757575;
@@ -161,17 +168,4 @@ body {
     margin-left: 100px;
     margin-top: 20px;
 
-}
-
-.container-fluid.navbar-custom {
-
-    flex-wrap: nowrap;
-
-}
-
-.weather-icon {
-
-    width: 24px;
-    height: 24px;
-    
 }
