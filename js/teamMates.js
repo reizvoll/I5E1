@@ -88,6 +88,7 @@ function createCards() {
     const modal_1 = document.querySelector(".modalFirst");
 
     cardDiv.addEventListener("click", (event) => {
+      // 
       modal_1.style.display = "flex";
 
       //새로 카드 추가할 때
