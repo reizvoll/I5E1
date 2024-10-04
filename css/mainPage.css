@@ -32,7 +32,6 @@ body {
 }
 
 .wrap {
-  cursor: pointer;
   width: 100%;
   max-width: 800px;
   padding: 20px;
@@ -74,4 +73,9 @@ body {
   margin-bottom: 30px;
   padding-left: 150px;
   text-align: center;
+  position: relative;
+  top: 20%;
+  transform: translateY(-50%);
+
+
 }
