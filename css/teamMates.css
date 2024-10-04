@@ -1,8 +1,5 @@
-
 .bold {
-
   font-weight: 700;
-
 }
 
 .teammates {
@@ -17,10 +14,9 @@
 }
 
 .team-intro {
-
   height: 60px;
-  display: flex; 
-  flex-direction: row; 
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -34,11 +30,9 @@
   flex-wrap: wrap;
   justify-content: flex-start; /* Align items to the start */
   gap: 48px; /* Consistent gap between cards */
-
 }
 
 .mycard {
-
   flex-basis: calc(33.33% - 32px);
   height: 150px;
   padding: 20px;
@@ -46,27 +40,21 @@
   margin-top: 0;
   transition: 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
 
 .mycard:hover {
-
   transform: scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 50px;
-
 }
 
 .member-des {
-
   width: auto;
   margin-bottom: 0px;
   font-size: 24px;
   font-weight: 700;
-
 }
 
 .card-content {
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,53 +62,43 @@
   margin-top: 24px;
   min-width: 140px;
   height: 46px;
-
 }
 
 .profile-pic {
-
   width: 40px;
   height: 40px;
   border-radius: 50px;
-
+  object-fit: cover;
 }
 
 .card-body {
-
   padding: 0 0 0 1em;
-
 }
 
 .card-body > * {
-
   color: #b3b3b3;
-
 }
 
 .card-title {
-
   color: #757575;
   margin-bottom: 0px;
-
 }
 
-.fontSize{
+.fontSize {
   font-size: 25px;
 }
 
 /* 감자 수정 */
 
 /* 카드 추가 버튼 css */
-#createBtn{
-
-  padding: 20px 20px; 
+#createBtn {
+  padding: 20px 20px;
   border-radius: 8px;
   border: 0px;
-  background-color: #2C2C2C;
+  background-color: #2c2c2c;
   color: #fff;
   font-weight: 500;
   float: right;
-  margin-bottom: 20px;
-  line-height: 50%;
+  margin: 10px 0px;
+  line-height: 0;
 }
-
