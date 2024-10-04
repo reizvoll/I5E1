@@ -87,11 +87,15 @@
   height: 280px;
 }
 
-.modal_body1 > button {
-  position: absolute;
-  top: 68px;
-  right: 280px;
+.modal_body1 button {
   background-color: #e3e3e3;
+  flex-shrink: 0;
+  height: 48px;
+}
+
+.nameBlogBtn{
+  display: flex;
+  gap: 8px;
 }
 
 .info1 {
@@ -102,7 +106,7 @@
   text-align: start;
 }
 
-.info1 > .name {
+.info1 .name {
   font-size: xx-large;
   font-weight: 700;
 }
