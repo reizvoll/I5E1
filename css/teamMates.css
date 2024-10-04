@@ -9,7 +9,8 @@
   /* 일단 고정 시킴 */
   width: 1200px;
   min-width: 100%;
-  height: 675px;
+  height: fit-content;
+  min-height: 675px;
   padding: 65px;
   padding-top: 100px;
 }
@@ -23,8 +24,8 @@
 }
 
 .team-cards {
-
   margin: 24px 0px;
+  margin-top: 80px;
   padding-top: 0px;
   width: 100%;
   min-height: 342px;
@@ -119,6 +120,6 @@
   font-weight: 500;
   float: right;
   margin-bottom: 20px;
-  
+  line-height: 50%;
 }
 
