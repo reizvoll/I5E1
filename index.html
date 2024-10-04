@@ -2,82 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> I5E1 소개페이지 </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/app.css" />
-    
-    <script>
-      $(document).ready(function () {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> I5E1 소개페이지 </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/app.css" />
+
+  <script>
+    $(document).ready(function () {
       let url = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=7ecb1eb66ae504b90a80a108c2a51a09&units=metric";
       fetch(url)
-          .then(res => res.json())
-          .then(data => {
-              let temp = data['main']['temp'];
-              $('#ondo').text(temp);
-              let icon = data['weather'][0]['icon'];
-              let iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-              $('#ondo-icon').html(`<img class="weather-icon" src="${iconUrl}" alt="Weather Icon">`);
-          });
-      });
-    </script>
+        .then(res => res.json())
+        .then(data => {
+          let temp = data['main']['temp'];
+          $('#ondo').text(temp);
+          let icon = data['weather'][0]['icon'];
+          let iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+          $('#ondo-icon').html(`<img class="weather-icon" src="${iconUrl}" alt="Weather Icon">`);
+        });
+    });
+  </script>
 </head>
 
 <body>
 
-    <!-- 섹션 1 : 헤더 -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid navbar-custom">
-            <!-- 로고 -->
-            <a class="navbar-brand" href="#">
-                <img class="nbar-logo"
-                    src="https://ifh.cc/g/QCJOSd.png"
-                    alt="Logo">
-            </a>
+  <!-- 섹션 1 : 헤더 -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid navbar-custom">
+      <!-- 로고 -->
+      <a class="navbar-brand" href="#">
+        <img class="nbar-logo" src="https://ifh.cc/g/QCJOSd.png" alt="Logo">
+      </a>
 
-            <!-- 팀 소개 / 팀원 소개 / 방명록 / 온도 -->
-            <div class="navbar-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#nbar1">팀 소개</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nbar2">팀원 소개</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nbar3">방명록</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-link-ondo"><span id="ondo-icon"></span><span id="ondo"></span>℃</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- 섹션 2 : 메인 / 팀 소개 페이지-->
-    <div class="main_head">
-        <div class="wrap">
-            <h1 class="tit1"> I5E1 </h1>
-            <h3 class="sub1"> I5E1의 팀 소개 페이지입니다. </h3>
-        </div>
+      <!-- 팀 소개 / 팀원 소개 / 방명록 / 온도 -->
+      <div class="navbar-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#nbar1">팀 소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#teammates">팀원 소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nbar3">방명록</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-link-ondo"><span id="ondo-icon"></span><span id="ondo"></span>℃</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class=sub_head>
-        <h4 class="tit2" id="nbar1"> 팀 소개 </h4>
-        <h6 class="sub2"> SubHeading </h6>
-        <h3 class="introduce">
-            안녕하세요, 여러분. <br>
-            유일무E 리-다 임지영이 이끄는.. <br>
-            I5E1 소개 페이지에 방문해 주셔서 감사합니다!
-        </h3>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 섹션 2 : 메인 / 팀 소개 페이지-->
+  <div class="main_head">
+    <div class="wrap">
+      <h1 class="tit1"> I5E1 </h1>
+      <h3 class="sub1"> I5E1의 팀 소개 페이지입니다. </h3>
     </div>
+  </div>
+  <div class=sub_head id="nbar1">
+    <h4 class="tit2"> 팀 소개 </h4>
+    <h6 class="sub2"> SubHeading </h6>
+    <h3 class="introduce">
+      안녕하세요, 여러분. <br>
+      유일무E 리-다 임지영이 이끄는.. <br>
+      I5E1 소개 페이지에 방문해 주셔서 감사합니다!
+    </h3>
+  </div>
 
     <!-- 첫번째 모달 -->
     <div class="modalFirst">
@@ -194,23 +192,23 @@
         </div>
     </div>
 
-    
-    <div  class="comment">
-        <h4 class="tit2" id="nbar3"> 방명록 </h4>
-        <h6 class="sub2"> 방명록을 작성해 주세요~ </h6>
 
-        <!-- 댓글 입력 폼 -->
-        <form id="commentForm" class="commentWrap">
-            <textarea name="" class="commentBox" id="commentCont" placeholder="댓글을 작성해주세요"></textarea>
-            <button type="submit" class="commentSubmtBtn">작성</button>
-        </form>
+  <div class="comment" id="nbar3">
+    <h4 class="tit2"> 방명록 </h4>
+    <h6 class="sub2"> 방명록을 작성해 주세요~ </h6>
+
+    <!-- 댓글 입력 폼 -->
+    <form id="commentForm" class="commentWrap">
+      <textarea name="" class="commentBox" id="commentCont" placeholder="댓글을 작성해주세요"></textarea>
+      <button type="submit" class="commentSubmtBtn">작성</button>
+    </form>
 
 
     <!-- 댓글 입력 폼 종료 -->
 
         <!-- 말풍선 -->
         <div class="guestbook" id="guestbook"></div>
-        </div>
+    </div>
     <!-- 각각의 js 이름 스크립트에 넣기(아래처럼) -->
     
     <!-- firebase CDN -->
@@ -220,30 +218,29 @@
     <script src="https://kit.fontawesome.com/493cc16663.js" crossorigin="anonymous"></script>
     
 
-    <!-- 섹션 1 : 푸터 -->
-    <footer class="footer">
-        <div class="footer-logo">
-            <a class="footer-brand1">
-                <img id="footer-logo1"
-                    src="https://ifh.cc/g/TnO97L.png">
-            </a>
-            <a class="footer-brand2" href="https://github.com/reizvoll/I5E1" target="_blank">
-                <img id="footer-logo2"
-                    src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FIAOCOTfhJPA81TROroDg1.png&w=1920&q=75">
-            </a>
-        </div>
+  <!-- 섹션 1 : 푸터 -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <a class="footer-brand1">
+        <img id="footer-logo1" src="https://ifh.cc/g/TnO97L.png">
+      </a>
+      <a class="footer-brand2" href="https://github.com/reizvoll/I5E1" target="_blank">
+        <img id="footer-logo2"
+          src="https://www.riido.io/_next/image?url=https%3A%2F%2Fcdn.riido.io%2Ffiles%2Feditors%2FIAOCOTfhJPA81TROroDg1.png&w=1920&q=75">
+      </a>
+    </div>
 
-        <p class="footer-name">
-            <a href="https://reiz-voll.tistory.com/" target="_blank"><span>임지영</span></a>
-            <a href="https://velog.io/@sun4/posts" target="_blank"><span>원윤선</span></a>
-            <a href="https://notion0896.tistory.com/" target="_blank"><span>김진실</span></a>
-            <a href="https://dev-gana.tistory.com/" target="_blank"><span>박가나</span></a>
-            <a href="https://velog.io/@pk97h/posts" target="_blank"><span>박하은</span></a>
-            <a href="https://velog.io/@chay140/posts" target="_blank"><span>박채현</span></a>
-        </p>
+    <p class="footer-name">
+      <a href="https://reiz-voll.tistory.com/" target="_blank"><span>임지영</span></a>
+      <a href="https://velog.io/@sun4/posts" target="_blank"><span>원윤선</span></a>
+      <a href="https://notion0896.tistory.com/" target="_blank"><span>김진실</span></a>
+      <a href="https://dev-gana.tistory.com/" target="_blank"><span>박가나</span></a>
+      <a href="https://velog.io/@pk97h/posts" target="_blank"><span>박하은</span></a>
+      <a href="https://velog.io/@chay140/posts" target="_blank"><span>박채현</span></a>
+    </p>
 
-        <p id="All-rights-reserved">© 2024 I5E1. All rights reserved.</p>
-    </footer>
+    <p id="All-rights-reserved">© 2024 I5E1. All rights reserved.</p>
+  </footer>
 
 
 </body>
